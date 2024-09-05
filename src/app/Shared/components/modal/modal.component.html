@@ -1,0 +1,17 @@
+@if(visible){
+<div
+  class="w-screen h-screen bg-[#000] fixed top-0 left-0 bg-black opacity-40 z-50"
+></div>
+}
+
+<p-dialog
+  [header]="Header"
+  [(visible)]="visible"
+  [modal]="true"
+  [breakpoints]="{ '1199px': '60vw', '575px': '90vw' }"
+  [style]="styles"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <ng-content></ng-content>
+</p-dialog>

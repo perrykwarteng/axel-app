@@ -1,0 +1,15 @@
+<div
+  class="p-3 my-3 flex items-center gap-2 cursor-pointer {{
+    active ? 'border-primaryColor border-r-4 rounded-r shadow-sm ' : ''
+  }}"
+  [routerLink]="page"
+>
+  <img class="w-5 h-5" [src]="active ? iconActSrc : iconSrc" />
+  <p
+    class="text-[16px] font-normal {{
+      active ? 'text-primaryColor font-semibold' : 'text-secondaryColor'
+    }}"
+  >
+    {{ label }}
+  </p>
+</div>

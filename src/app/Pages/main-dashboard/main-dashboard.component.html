@@ -1,0 +1,31 @@
+<section>
+  <div class="flex gap-5 items-center">
+    <div class="flex-grow">
+      <app-stat-card
+        [backgroundColor]="'bg-primaryColor'"
+        [textStyles]="'text-whiteColor'"
+        [textValueStyles]="'text-whiteColor'"
+        [valueLabel]="'Axel Type:'"
+        [value]="7"
+      />
+    </div>
+    <div class="flex-grow">
+      <app-stat-card
+        [backgroundColor]="'bg-whiteColor'"
+        [textStyles]="'text-secondaryColor'"
+        [textValueStyles]="'text-secondaryColor'"
+        [valueLabel]="'Weight on Axel:'"
+        [value]="3000"
+      />
+    </div>
+    <div class="flex-grow">
+      <app-stat-card
+        [backgroundColor]="'bg-whiteColor'"
+        [textStyles]="'text-secondaryColor'"
+        [textValueStyles]="'text-secondaryColor'"
+        [valueLabel]="'Total Weight:'"
+        [value]="7*3000"
+      />
+    </div>
+  </div>
+</section>

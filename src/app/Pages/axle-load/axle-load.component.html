@@ -1,0 +1,127 @@
+<section class="">
+  <!-- Filtering -->
+  <div class="flex justify-between items-center">
+    <div class="w-full md:w-[30%]">
+      <app-search-input [label]="''" />
+    </div>
+    <div class="flex gap-3 items-center justify-end">
+      <app-button-icon
+        [icon]="'assets/icons/file-export.svg'"
+        [text]="'Export'"
+      />
+      <app-button-icon [icon]="'assets/icons/config-icon.svg'" />
+    </div>
+  </div>
+  <!-- Table -->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-7">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead class="text-xs text-gray-700 uppercase bg-secondaryColor">
+        <tr>
+          <th scope="col" class="text-whiteColor px-3 py-3">Serrial No</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Vechicle No</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Date/Time</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Axle Type</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Gross Weight</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Allowed Weight</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Overload</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Total Fine</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Commodity</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Orgin</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Destination</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            226/2024-06-24
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">GT 4875-09</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            2024-06-25, 07:44:10
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">7C</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">67440</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">70000</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Container</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Kumasi</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Accra</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Tema</td>
+        </tr>
+
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            226/2024-06-24
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">GT 4875-09</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            2024-06-25, 07:44:10
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">7C</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">67440</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">70000</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Container</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Kumasi</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Accra</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Tema</td>
+        </tr>
+
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            226/2024-06-24
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">GT 4875-09</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            2024-06-25, 07:44:10
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">7C</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">67440</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">70000</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Container</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Kumasi</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Accra</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Tema</td>
+        </tr>
+
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            226/2024-06-24
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">GT 4875-09</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            2024-06-25, 07:44:10
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">7C</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">67440</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">70000</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">0</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Container</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Kumasi</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Accra</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Tema</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

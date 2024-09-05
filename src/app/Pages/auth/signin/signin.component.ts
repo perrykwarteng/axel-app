@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -20,7 +20,7 @@ export class SigninComponent {
     this.isOpen = !this.isOpen;
   }
   signInForm: FormGroup;
-  constructor(private _fb: FormBuilder) {
+  constructor(private _fb: FormBuilder, private route: Router) {
     this.signInForm = this._fb.group({
       email: [, [Validators.required, Validators.email]],
       password: [, [Validators.required, Validators.minLength(6)]],
@@ -29,7 +29,7 @@ export class SigninComponent {
 
   signInProcess() {
     if (this.signInForm.valid) {
-      console.log(this.signInForm.value);
+      this.route.navigate(['/dashboard/main-dashboard']);
     }
   }
 }

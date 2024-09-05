@@ -1,0 +1,45 @@
+<div class="bg-whiteColor shadow w-[270px] h-full rounded-[10px] py-4">
+  <div class="p-3">
+    <h1 class="text-[30px] text-secondaryColor">ALSMS lOGO</h1>
+  </div>
+
+  <div class="mt-10">
+    <nav>
+      <ul>
+        <app-navlist
+          [iconSrc]="'assets/icons/homeI.svg'"
+          [iconActSrc]="'assets/icons/home.svg'"
+          [label]="'Dashboard'"
+          [active]="mainDashboard"
+          (click)="setNavActive('mainDashboard')"
+          [page]="'main-dashboard'"
+        />
+        <app-navlist
+          [iconSrc]="'assets/icons/setting-icon.svg'"
+          [iconActSrc]="'assets/icons/active-settings.svg'"
+          [label]="'Statistics'"
+          [active]="statistics"
+          (click)="setNavActive('statistics')"
+          [page]="'statistics'"
+        />
+        <app-navlist
+          [iconSrc]="'assets/icons/list-icon.svg'"
+          [iconActSrc]="'assets/icons/active-list-icon.svg'"
+          [label]="'Records'"
+          [active]="axelLoad"
+          (click)="setNavActive('axelLoad')"
+          [page]="'axle-load'"
+        />
+
+        <app-navlist
+          [iconSrc]="'assets/icons/setting-icon.svg'"
+          [iconActSrc]="'assets/icons/active-settings.svg'"
+          [label]="'Settings'"
+          [active]="settings"
+          (click)="setNavActive('settings')"
+          [page]="'settings'"
+        />
+      </ul>
+    </nav>
+  </div>
+</div>
