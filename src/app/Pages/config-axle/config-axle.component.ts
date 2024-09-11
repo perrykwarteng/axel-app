@@ -3,6 +3,7 @@ import { ButtonIconComponent } from '../../Shared/components/button-icon/button-
 import { ModalComponent } from '../../Shared/components/modal/modal.component';
 import { InputComponent } from '../../Shared/components/input/input.component';
 import { SelectComponent } from '../../Shared/components/select/select.component';
+import { ButtonNormalComponent } from '../../Shared/components/button-normal/button-normal.component';
 
 @Component({
   selector: 'app-config-axle',
@@ -14,18 +15,19 @@ import { SelectComponent } from '../../Shared/components/select/select.component
     ModalComponent,
     InputComponent,
     SelectComponent,
+    ButtonNormalComponent,
   ],
 })
 export class ConfigAxleComponent {
   openAxleType: boolean = false;
+  openCommodity: boolean = false;
   openAxel() {
-    this.openAxleType = !this.openAxleType;
+    this.openAxleType = true;
+  }
+  createCommodity() {
+    this.openCommodity = true;
   }
 
-  selectedOption: string = '';
-  handleOptionSelected(option: string) {
-    this.selectedOption = option;
-  }
   axleType: boolean = true;
   commodity: boolean = false;
   setPage(page: string) {
@@ -44,5 +46,10 @@ export class ConfigAxleComponent {
         this.axleType = false;
         this.commodity = false;
     }
+  }
+
+  close() {
+    this.openAxleType = false;
+    this.openCommodity = false;
   }
 }

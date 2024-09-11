@@ -160,6 +160,7 @@
     <app-button-icon
       [icon]="'assets/icons/add-icon.svg'"
       [text]="'Add Comodity'"
+      (click)="createCommodity()"
     />
   </div>
 
@@ -182,9 +183,9 @@
             scope="row"
             class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
           >
-            7C
+            1
           </th>
-          <td class="px-3 py-4 font-normal text-secondaryColor">21000</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Food</td>
           <td class="px-3 py-4 font-normal">
             <div class="flex items-center justify-end gap-2">
               <img
@@ -206,9 +207,11 @@
             scope="row"
             class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
           >
-            7C
+            2
           </th>
-          <td class="px-3 py-4 font-normal text-secondaryColor">21000</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            Agric Products
+          </td>
           <td class="px-3 py-4 font-normal">
             <div class="flex items-center justify-end gap-2">
               <img
@@ -230,9 +233,9 @@
             scope="row"
             class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
           >
-            7C
+            3
           </th>
-          <td class="px-3 py-4 font-normal text-secondaryColor">21000</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Energy</td>
           <td class="px-3 py-4 font-normal">
             <div class="flex items-center justify-end gap-2">
               <img
@@ -254,36 +257,156 @@
   }
 </section>
 
-<app-modal [Header]="'Add Axel Type'" [visible]="openAxleType">
-  <div class="mt-2">
-    <app-input
-      [type]="'text'"
-      [inputId]="'axleType'"
-      [label]="'Axle Type'"
-      [placeholder]="'Enter axle type here ...'"
-    />
-    <app-input
-      [type]="'text'"
-      [inputId]="'axleType'"
-      [label]="'Allowed Weight'"
-      [placeholder]="'Enter allowed weight here ...'"
-      [value]="27000"
-    />
-
+<app-modal
+  [styles]="{
+   width: '800px',
+    background: '#fff',
+    padding: '10px 15px',
+    borderRadius: '10px',
+}"
+  [Header]="'Add Axel Type'"
+  [visible]="openAxleType"
+>
+  <div class="flex items-center gap-4">
     <div class="w-full">
-      <app-select
-        [label]="'Select Category'"
-        [options]="['Option 1', 'Option 2', 'Option 3']"
-        placeholder="Choose a category"
-        (optionSelected)="handleOptionSelected($event)"
+      <app-input
+        [type]="'text'"
+        [inputId]="'axleType'"
+        [label]="'Axle Type'"
+        [placeholder]="'Enter axle type here ...'"
+      />
+    </div>
+    <div class="w-full">
+      <app-input
+        [type]="'text'"
+        [inputId]="'axleType'"
+        [label]="'Allowed Weight'"
+        [placeholder]="'eg, 21000'"
+      />
+    </div>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 1'"
+        [placeholder]="'eg, 0000'"
       />
     </div>
 
-    <app-input
-      [type]="'text'"
-      [inputId]="'axleType'"
-      [label]="'Allowed Weight'"
-      [placeholder]="'Enter allowed weight here ...'"
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 2'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 3'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 4'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 5'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 6'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 7'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 8'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+    <div class="w-full">
+      <app-input
+        [type]="'number'"
+        [inputId]="'axleType'"
+        [label]="'Axle 9'"
+        [placeholder]="'eg, 0000'"
+      />
+    </div>
+  </div>
+
+  <div class="flex items-center justify-end gap-4 mt-4">
+    <app-button-normal [text]="'Cancel'" (click)="close()" />
+    <app-button-normal
+      [bgStyles]="'bg-secondaryColor text-whiteColor'"
+      [text]="'Save Axel'"
+    />
+  </div>
+</app-modal>
+
+<app-modal
+  [styles]="{
+   width: '600px',
+    background: '#fff',
+    padding: '10px 15px',
+    borderRadius: '10px',
+}"
+  [Header]="'Add Axel Type'"
+  [visible]="openCommodity"
+>
+  <div class="">
+    <div class="w-full">
+      <app-input
+        [type]="'text'"
+        [inputId]="'commodity'"
+        [label]="'Commodity'"
+        [placeholder]="'Enter commodity here ...'"
+      />
+    </div>
+  </div>
+
+  <div class="flex items-center justify-end gap-4 mt-4">
+    <app-button-normal [text]="'Cancel'" (click)="close()" />
+    <app-button-normal
+      [bgStyles]="'bg-secondaryColor text-whiteColor'"
+      [text]="'Save Commodity'"
     />
   </div>
 </app-modal>
