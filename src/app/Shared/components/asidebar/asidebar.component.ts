@@ -15,7 +15,7 @@ export class AsidebarComponent implements OnInit {
   statistics: boolean = false;
 
   ngOnInit() {
-    const activeNav = localStorage.getItem('activeNav');
+    const activeNav = sessionStorage.getItem('activeNav');
     if (activeNav) {
       this.setNavActive(activeNav);
     } else {
@@ -24,7 +24,7 @@ export class AsidebarComponent implements OnInit {
   }
 
   setNavActive(nav: string) {
-    localStorage.setItem('activeNav', nav);
+    sessionStorage.setItem('activeNav', nav);
     switch (nav) {
       case 'mainDashboard':
         this.mainDashboard = true;
