@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { NavlistComponent } from '../navlist/navlist.component';
+import { AuthServicesService } from '../../../Core/Services/auth-services.service';
 
 @Component({
   selector: 'app-asidebar',
@@ -10,16 +11,26 @@ import { NavlistComponent } from '../navlist/navlist.component';
 })
 export class AsidebarComponent implements OnInit {
   mainDashboard: boolean = true;
+  statistics: boolean = true;
   settings: boolean = false;
   axelLoad: boolean = false;
-  statistics: boolean = true;
   monitoringOfficers: boolean = false;
 
+  constructor(private authService: AuthServicesService){}
+  userDetails:any
+
   ngOnInit() {
+
+    const user:any = this.authService.getUser() 
+    this.userDetails = user
+
+
     const activeNav = sessionStorage.getItem('activeNav');
     if (activeNav) {
       this.setNavActive(activeNav);
-    } else {
+    } else if(user.role === 'admin') {
+      this.setNavActive('statistics');
+    }else{
       this.setNavActive('mainDashboard');
     }
   }
