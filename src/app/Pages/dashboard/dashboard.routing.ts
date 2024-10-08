@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfigAxleComponent } from '../monitoring-officer/config-axle/config-axle.component';
 import { MainDashboardComponent } from '../monitoring-officer/main-dashboard/main-dashboard.component';
 import { AxleLoadComponent } from '../monitoring-officer/axle-load/axle-load.component';
-import { StatisticsComponent } from '../admin/statistics/statistics.component';
 import { AdminDashboardComponent } from '../admin/admin-dashboard/admin-dashboard.component';
 import { MonitoringUsersComponent } from '../admin/monitoring-users/monitoring-users.component';
 
@@ -18,10 +17,6 @@ export const dashboardRoutes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      {
-        path: '',
-        component: MainDashboardComponent,
-      },
       {
         path: 'main-dashboard',
         component: MainDashboardComponent,
@@ -41,10 +36,6 @@ export const dashboardRoutes: Routes = [
       {
         path: 'settings',
         component: ConfigAxleComponent,
-      },
-      {
-        path: 'statistics',
-        component: StatisticsComponent,
       },
     ],
   },

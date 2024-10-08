@@ -29,7 +29,7 @@ export class SigninComponent {
 
   signInProcess() {
     if (this.signInForm.valid) {
-      this.route.navigate(['/dashboard/main-dashboard']);
+      this.route.navigate(['/dashboard/admin-dashboard']);
     }
   }
 }
