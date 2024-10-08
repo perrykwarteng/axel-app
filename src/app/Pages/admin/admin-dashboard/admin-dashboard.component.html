@@ -1,1 +1,59 @@
-<p>admin-dashboard works!</p>
+<section>
+  @if(loader){
+  <app-loader />
+  }
+
+  <div class="flex items-center flex-wrap gap-[15px]">
+    <div class="flex-grow">
+      <app-stat-card
+        [backgroundColor]="'bg-primaryColor'"
+        [textStyles]="'text-whiteColor'"
+        [textValueStyles]="'text-whiteColor'"
+        [valueLabel]="'Number of Axel'"
+        [value]="7"
+      />
+    </div>
+    <app-stat-card
+      [backgroundColor]="'bg-primaryColor'"
+      [textStyles]="'text-whiteColor'"
+      [textValueStyles]="'text-whiteColor'"
+      [valueLabel]="'Number of Axel'"
+      [value]="7"
+    />
+    <div class="flex-grow">
+      <app-stat-card
+        [backgroundColor]="'bg-whiteColor'"
+        [textStyles]="'text-secondaryColor'"
+        [textValueStyles]="'text-secondaryColor'"
+        [valueLabel]="'Total Weight:'"
+        [value]="7 * 3000"
+      />
+    </div>
+    <div class="flex-grow">
+      <app-stat-card
+        [backgroundColor]="'bg-whiteColor'"
+        [textStyles]="'text-secondaryColor'"
+        [textValueStyles]="'text-secondaryColor'"
+        [valueLabel]="'Total Weight:'"
+        [value]="7 * 3000"
+      />
+    </div>
+  </div>
+
+  
+  <div class="w-full flex items-center mt-10">
+    <div class="w-full">
+        <h2 class="text-[16px] text-secondaryColor font-medium mb-3">Alexs Recorded</h2>
+      <div class="">
+          <canvas id="chartOne" height="400"></canvas>
+      </div>
+        
+    </div>
+    <div class="w-full">
+        <h2 class="text-[16px] text-secondaryColor font-medium mb-3">Commodities</h2>
+      <div class="">
+          <canvas id="chartTwo" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
