@@ -1,1 +1,140 @@
-<p>monitoring-users works!</p>
+<section class="">
+  <!-- Filtering -->
+  <div class="flex justify-between items-center">
+    <div class="w-full md:w-[30%]">
+      <app-search-input [label]="''" />
+    </div>
+    <div class="flex gap-3 items-center justify-end">
+      <app-button-icon
+        [icon]="'assets/icons/file-export.svg'"
+        [text]="'Export'"
+      />
+      <app-button-icon [icon]="'assets/icons/config-icon.svg'" />
+      <app-button-icon
+        [icon]="'assets/icons/add-icon.svg'"
+        [text]="'Add New Officer'"
+        (click)="openAddNewOfficer()"
+      />
+    </div>
+  </div>
+  <!-- Table -->
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-7">
+    <table
+      class="min-w-full w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead class="text-xs text-gray-700 uppercase bg-secondaryColor">
+        <tr>
+          <th scope="col" class="text-whiteColor px-3 py-3">UserName</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Full Name</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Email</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Phone Number</th>
+          <th scope="col" class="text-whiteColor px-3 py-3">Station</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            user123
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">John Doe</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            {{ "john.doe@example.com" }}
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">+1234567890</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">New York</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            jane_smith
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Jane Smith</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            {{ "jane.smith@example.com" }}
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">+9876543210</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Los Angeles</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            mike_brown
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Mike Brown</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            {{ "mike.brown@example.com" }}
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">+1122334455</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Chicago</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th
+            scope="row"
+            class="px-3 py-4 font-medium text-secondaryColor whitespace-nowrap"
+          >
+            anna_white
+          </th>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Anna White</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">
+            {{ "anna.white@example.com" }}
+          </td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">+9988776655</td>
+          <td class="px-3 py-4 font-normal text-secondaryColor">Houston</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<app-modal
+  [styles]="{
+   width: '650px',
+   background: '#fff',
+    padding: '10px 15px',
+    borderRadius: '10px',
+}"
+  [Header]="'Add Monitoring Officer'"
+  [visible]="OfficerModal"
+>
+  <div class="relative">
+    <div class="w-full">
+      <app-input
+        [type]="'text'"
+        [inputId]="'fullName'"
+        [label]="'Full Name'"
+        [placeholder]="'Enter fullName here ...'"
+      />
+    </div>
+    <div class="w-full">
+      <app-input
+        [type]="'email'"
+        [inputId]="'email'"
+        [label]="'Email'"
+        [placeholder]="'eg. john@email.com'"
+      />
+    </div>
+
+    <div class="w-full ">
+      <app-select
+        [label]="'Choose Station'"
+        [placeholder]="'eg. Tema inter-Change'"
+        [options]="['Option one', 'Option two', 'Option Three']"
+      />
+    </div>
+  </div>
+
+  <div class="flex items-center justify-end gap-4 mt-4">
+    <app-button-normal [text]="'Cancel'" (click)="close()" />
+    <app-button-normal
+      [bgStyles]="'bg-secondaryColor text-whiteColor'"
+      [text]="'Add Officer'"
+    />
+  </div>
+</app-modal>
