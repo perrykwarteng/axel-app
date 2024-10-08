@@ -6,7 +6,7 @@
   <div class="mt-10">
     <nav>
       <ul>
-        <app-navlist
+        <!-- <app-navlist
           [iconSrc]="'assets/icons/homeI.svg'"
           [iconActSrc]="'assets/icons/home.svg'"
           [label]="'Dashboard'"
@@ -14,14 +14,6 @@
           (click)="setNavActive('mainDashboard')"
           [page]="'main-dashboard'"
         />
-        <!-- <app-navlist
-          [iconSrc]="'assets/icons/stats-icon.svg'"
-          [iconActSrc]="'assets/icons/stats-iconActive.svg'"
-          [label]="'Statistics'"
-          [active]="statistics"
-          (click)="setNavActive('statistics')"
-          [page]="'statistics'"
-        /> -->
         <app-navlist
           [iconSrc]="'assets/icons/list-icon.svg'"
           [iconActSrc]="'assets/icons/active-list-icon.svg'"
@@ -37,7 +29,27 @@
           [active]="settings"
           (click)="setNavActive('settings')"
           [page]="'settings'"
+        /> -->
+
+
+        <!-- Admin -->
+           <app-navlist
+          [iconSrc]="'assets/icons/stats-icon.svg'"
+          [iconActSrc]="'assets/icons/stats-iconActive.svg'"
+          [label]="'Dashboard'"
+          [active]="statistics"
+          (click)="setNavActive('statistics')"
+          [page]="'admin-dashboard'"
         />
+
+        <app-navlist
+        [iconSrc]="'assets/icons/users.svg'"
+        [iconActSrc]="'assets/icons/activeUsers.svg'"
+        [label]="'Monitoring Officers'"
+        [active]="monitoringOfficers"
+        (click)="setNavActive('monitoring-officers')"
+        [page]="'monitoring-officers'"
+      />
       </ul>
     </nav>
   </div>
