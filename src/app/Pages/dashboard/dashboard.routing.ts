@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ConfigAxleComponent } from '../config-axle/config-axle.component';
-import { MainDashboardComponent } from '../main-dashboard/main-dashboard.component';
-import { AxleLoadComponent } from '../axle-load/axle-load.component';
-import { StatisticsComponent } from '../statistics/statistics.component';
+import { ConfigAxleComponent } from '../monitoring-officer/config-axle/config-axle.component';
+import { MainDashboardComponent } from '../monitoring-officer/main-dashboard/main-dashboard.component';
+import { AxleLoadComponent } from '../monitoring-officer/axle-load/axle-load.component';
+import { StatisticsComponent } from '../admin/statistics/statistics.component';
+import { AdminDashboardComponent } from '../admin/admin-dashboard/admin-dashboard.component';
+import { MonitoringUsersComponent } from '../admin/monitoring-users/monitoring-users.component';
 
 export const dashboardRoutes: Routes = [
   {
@@ -23,6 +25,14 @@ export const dashboardRoutes: Routes = [
       {
         path: 'main-dashboard',
         component: MainDashboardComponent,
+      },
+      {
+        path: 'admin-dashboard',
+        component: AdminDashboardComponent,
+      },
+      {
+        path: 'monitoring-officers',
+        component: MonitoringUsersComponent,
       },
       {
         path: 'axle-load',
