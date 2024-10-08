@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin123",
+      "fullName": "John Admin",
+      "email": "admin@example.com",
+      "phoneNumber": "+1234567890",
+      "role": "admin",
+      "adminLevel": "super",
+      "password": "admin123"
+    },
+    {
+      "id": "2",
+      "username": "officer123",
+      "fullName": "Jane Officer",
+      "email": "officer@example.com",
+      "phoneNumber": "+0987654321",
+      "role": "officer",
+      "station": "Station 1",
+      "password": "officer123"
+    }
+  ]
+}
