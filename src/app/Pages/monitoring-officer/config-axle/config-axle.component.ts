@@ -6,17 +6,16 @@ import { SelectComponent } from '../../../Shared/components/select/select.compon
 import { ButtonNormalComponent } from '../../../Shared/components/button-normal/button-normal.component';
 
 @Component({
-  selector: 'app-config-axle',
-  standalone: true,
-  templateUrl: './config-axle.component.html',
-  styleUrl: './config-axle.component.css',
-  imports: [
-    ButtonIconComponent,
-    ModalComponent,
-    InputComponent,
-    SelectComponent,
-    ButtonNormalComponent,
-  ],
+    selector: 'app-config-axle',
+    templateUrl: './config-axle.component.html',
+    styleUrl: './config-axle.component.css',
+    imports: [
+        ButtonIconComponent,
+        ModalComponent,
+        InputComponent,
+        SelectComponent,
+        ButtonNormalComponent,
+    ]
 })
 export class ConfigAxleComponent {
   openAxleType: boolean = false;

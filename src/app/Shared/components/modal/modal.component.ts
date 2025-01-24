@@ -2,11 +2,10 @@ import { Component, Input } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 
 @Component({
-  selector: 'app-modal',
-  standalone: true,
-  imports: [DialogModule],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css',
+    selector: 'app-modal',
+    imports: [DialogModule],
+    templateUrl: './modal.component.html',
+    styleUrl: './modal.component.css'
 })
 export class ModalComponent {
   @Input() visible: boolean = true;

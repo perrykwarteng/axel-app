@@ -7,11 +7,10 @@ import { ButtonNormalComponent } from "../../../Shared/components/button-normal/
 import { SelectComponent } from '../../../Shared/components/select/select.component';
 
 @Component({
-  selector: 'app-monitoring-users',
-  standalone: true,
-  imports: [ButtonIconComponent, SearchInputComponent, ModalComponent, InputComponent, ButtonNormalComponent, SelectComponent],
-  templateUrl: './monitoring-users.component.html',
-  styleUrl: './monitoring-users.component.css'
+    selector: 'app-monitoring-users',
+    imports: [ButtonIconComponent, SearchInputComponent, ModalComponent, InputComponent, ButtonNormalComponent, SelectComponent],
+    templateUrl: './monitoring-users.component.html',
+    styleUrl: './monitoring-users.component.css'
 })
 export class MonitoringUsersComponent {
 

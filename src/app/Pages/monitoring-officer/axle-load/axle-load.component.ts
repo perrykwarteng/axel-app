@@ -6,16 +6,15 @@ import { SelectComponent } from '../../../Shared/components/select/select.compon
 import { SearchInputComponent } from '../../../Shared/components/search-input/search-input.component';
 
 @Component({
-  selector: 'app-axle-load',
-  standalone: true,
-  imports: [
-    ButtonIconComponent,
-    ModalComponent,
-    InputComponent,
-    SelectComponent,
-    SearchInputComponent,
-  ],
-  templateUrl: './axle-load.component.html',
-  styleUrl: './axle-load.component.css',
+    selector: 'app-axle-load',
+    imports: [
+        ButtonIconComponent,
+        ModalComponent,
+        InputComponent,
+        SelectComponent,
+        SearchInputComponent,
+    ],
+    templateUrl: './axle-load.component.html',
+    styleUrl: './axle-load.component.css'
 })
 export class AxleLoadComponent {}

@@ -8,11 +8,10 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-select',
-  standalone: true,
-  imports: [],
-  templateUrl: './select.component.html',
-  styleUrl: './select.component.css',
+    selector: 'app-select',
+    imports: [],
+    templateUrl: './select.component.html',
+    styleUrl: './select.component.css'
 })
 export class SelectComponent {
   @Input() label: string = 'Select an option';

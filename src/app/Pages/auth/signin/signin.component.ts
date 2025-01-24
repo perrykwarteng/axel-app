@@ -9,11 +9,10 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthServicesService } from '../../../Core/Services/auth-services.service';
 
 @Component({
-  selector: 'app-signin',
-  standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
-  templateUrl: './signin.component.html',
-  styleUrl: './signin.component.css',
+    selector: 'app-signin',
+    imports: [RouterLink, ReactiveFormsModule],
+    templateUrl: './signin.component.html',
+    styleUrl: './signin.component.css'
 })
 export class SigninComponent {
   isOpen: boolean = false;

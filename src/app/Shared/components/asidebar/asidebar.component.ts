@@ -3,11 +3,10 @@ import { NavlistComponent } from '../navlist/navlist.component';
 import { AuthServicesService } from '../../../Core/Services/auth-services.service';
 
 @Component({
-  selector: 'app-asidebar',
-  standalone: true,
-  imports: [NavlistComponent],
-  templateUrl: './asidebar.component.html',
-  styleUrl: './asidebar.component.css',
+    selector: 'app-asidebar',
+    imports: [NavlistComponent],
+    templateUrl: './asidebar.component.html',
+    styleUrl: './asidebar.component.css'
 })
 export class AsidebarComponent implements OnInit {
   mainDashboard: boolean = true;

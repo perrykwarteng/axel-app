@@ -7,11 +7,10 @@ import { StatCardComponent } from "../../../Shared/components/stat-card/stat-car
 
 
 @Component({
-  selector: 'app-admin-dashboard',
-  standalone: true,
-  imports: [LoaderComponent, StatCardComponent],
-  templateUrl: './admin-dashboard.component.html',
-  styleUrl: './admin-dashboard.component.css'
+    selector: 'app-admin-dashboard',
+    imports: [LoaderComponent, StatCardComponent],
+    templateUrl: './admin-dashboard.component.html',
+    styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent {
   loader:boolean = false
