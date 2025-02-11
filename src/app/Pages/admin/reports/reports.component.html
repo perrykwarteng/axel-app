@@ -1,0 +1,397 @@
+<section class="report min-h-full">
+  @if(reportPage){
+  <div class="flex flex-col items-center text-center p-6">
+    <img
+      src="../../../../assets/icons/report.svg"
+      alt="Report Overview Image"
+      class="w-9 h-auto mt-4 mb-2"
+    />
+    <h1 class="text-3xl font-bold text-secondaryColor">Report Overview</h1>
+    <p class="text-lg text-gray-600 mt-2 text-lightSecondaryColor">
+      This section provides an overview of the reports with key insights and
+      analysis.
+    </p>
+  </div>
+
+  <div class="all reports flex items-center justify-center">
+    <div class="w-[650px] flex items-center gap-3">
+      <div
+        class="w-full p-2 py-3 rounded-md border-2 border-lightSecondaryColor flex items-center gap-3 hover:scale-105 cursor-pointer"
+        (click)="setReportPage('axelReport')"
+      >
+        <img class="w-6" src="../../../../assets/icons/list-icon.svg" />
+        <h3 class="text-lightSecondaryColor">Axel Report</h3>
+      </div>
+      <div
+        class="w-full p-2 py-3 rounded-md border-2 border-lightSecondaryColor flex items-center gap-3 hover:scale-105 cursor-pointer"
+        (click)="setReportPage('fineReport')"
+      >
+        <img class="w-6" src="../../../../assets/icons/fines.svg" />
+        <h3 class="text-lightSecondaryColor">Fine Report</h3>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- AXEL REPORT -->
+  @if(axelReport) {
+  <div class="">
+    <div (click)="axelBack()" class="">
+      <p
+        class="font-medium text-secondaryColor cursor-pointer hover:text-primaryColor"
+      >
+        Back to Report
+      </p>
+    </div>
+
+    <h2 class="text-[25px] font-medium text-secondaryColor mt-4">
+      Axel Report
+    </h2>
+  </div>
+
+  <div class="filtering w-full flex items-center gap-3 mt-3">
+    <input
+      class="block w-full border border-borderColor rounded-md py-2 px-1"
+      type="text"
+      placeholder="filter keyword"
+    />
+    <div class="w-full flex items-center">
+      <label for="startDate" class="text-[12px] font-medium text-secondaryColor"
+        >Start Date</label
+      >
+      <input
+        id="startDate"
+        type="date"
+        autocomplete="startDate"
+        placeholder=""
+        class="block w-full border border-borderColor rounded-md py-2 px-1"
+      />
+    </div>
+    <div class="w-full flex items-center">
+      <label for="endDate" class="text-[12px] font-medium text-secondaryColor"
+        >End Date</label
+      >
+      <input
+        type="date"
+        autocomplete="endDate"
+        placeholder=""
+        class="block w-full border border-borderColor rounded-md py-2 px-1"
+      />
+    </div>
+    <div class="w-full">
+      <button
+        type="submit"
+        class="px-7 py-2.5 text-whiteColor rounded-md bg-lightSecondaryColor transition-all duration-500"
+      >
+        Search
+      </button>
+    </div>
+    <div class="w-full flex justify-end">
+      <app-button-icon
+        [icon]="'assets/icons/file-export.svg'"
+        [text]="'Export'"
+      />
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="relative overflow-x-auto mt-5 bg-whiteColor">
+    <table class="min-w-full w-full text-left">
+      <thead class="capitalize">
+        <tr class="border-b border-[#d2d1d1]">
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Serial No
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Date/Time
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Axle Type
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Gross Weight
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Allowed Weight
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Overload
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Total Fine
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Orgin
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Destination
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Location
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">226/2024-06-24</th>
+          <td class="px-3 py-4 text-[#262c46]">2024-06-25</td>
+          <td class="px-3 py-4 text-[#262c46]">7C</td>
+          <td class="px-3 py-4 text-[#262c46]">67440</td>
+          <td class="px-3 py-4 text-[#262c46]">70000</td>
+          <td class="px-3 py-4 text-[#262c46]">0</td>
+          <td class="px-3 py-4 text-[#262c46]">0</td>
+          <td class="px-3 py-4 text-[#262c46]">Kumasi</td>
+          <td class="px-3 py-4 text-[#262c46]">Accra</td>
+          <td class="px-3 py-4 text-[#262c46]">Tema</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">226/2024-06-24</th>
+          <td class="px-3 py-4 text-[#262c46]">2024-06-25</td>
+          <td class="px-3 py-4 text-[#262c46]">7C</td>
+          <td class="px-3 py-4 text-[#262c46]">67440</td>
+          <td class="px-3 py-4 text-[#262c46]">70000</td>
+          <td class="px-3 py-4 text-[#262c46]">0</td>
+          <td class="px-3 py-4 text-[#262c46]">0</td>
+          <td class="px-3 py-4 text-[#262c46]">Kumasi</td>
+          <td class="px-3 py-4 text-[#262c46]">Accra</td>
+          <td class="px-3 py-4 text-[#262c46]">Tema</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">226/2024-06-24</th>
+          <td class="px-3 py-4 text-[#262c46]">2024-06-25</td>
+          <td class="px-3 py-4 text-[#262c46]">7C</td>
+          <td class="px-3 py-4 text-[#262c46]">67440</td>
+          <td class="px-3 py-4 text-[#262c46]">70000</td>
+          <td class="px-3 py-4 text-[#262c46]">0</td>
+          <td class="px-3 py-4 text-[#262c46]">0</td>
+          <td class="px-3 py-4 text-[#262c46]">Kumasi</td>
+          <td class="px-3 py-4 text-[#262c46]">Accra</td>
+          <td class="px-3 py-4 text-[#262c46]">Tema</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  }
+  <!-- FINE REPORT -->
+  @if(fineReport) {
+  <div (click)="fineBack()" class="">
+    <p
+      class="font-medium text-secondaryColor cursor-pointer hover:text-primaryColor"
+    >
+      Back to Report
+    </p>
+  </div>
+
+  <!--  -->
+  <div class="filtering w-full flex items-center gap-3 mt-3">
+    <input
+      class="block w-full border border-borderColor rounded-md py-2 px-1"
+      type="text"
+      placeholder="filter keyword"
+    />
+    <div class="w-full flex items-center">
+      <label for="startDate" class="text-[12px] font-medium text-secondaryColor"
+        >Start Date</label
+      >
+      <input
+        id="startDate"
+        type="date"
+        autocomplete="startDate"
+        placeholder=""
+        class="block w-full border border-borderColor rounded-md py-2 px-1"
+      />
+    </div>
+    <div class="w-full flex items-center">
+      <label for="endDate" class="text-[12px] font-medium text-secondaryColor"
+        >End Date</label
+      >
+      <input
+        type="date"
+        autocomplete="endDate"
+        placeholder=""
+        class="block w-full border border-borderColor rounded-md py-2 px-1"
+      />
+    </div>
+    <div class="w-full">
+      <button
+        type="submit"
+        class="px-7 py-2.5 text-whiteColor rounded-md bg-lightSecondaryColor transition-all duration-500"
+      >
+        Search
+      </button>
+    </div>
+    <div class="w-full flex justify-end">
+      <app-button-icon
+        [icon]="'assets/icons/file-export.svg'"
+        [text]="'Export'"
+      />
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="relative overflow-x-auto mt-5 bg-whiteColor">
+    <table class="min-w-full w-full text-left">
+      <thead class="capitalize">
+        <tr class="border-b border-[#d2d1d1]">
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Fine ID
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Fine Typy
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Amount (GHS)
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Issued Date
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Due Date
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Status
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Total Fine
+          </th>
+          <th
+            scope="col"
+            class="text-[#262c46] text-[16px] font-medium px-3 py-3"
+          >
+            Issued By
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">F-1001</th>
+          <td class="px-3 py-4 text-[#262c46]">Parking</td>
+          <td class="px-3 py-4 text-[#262c46]">200.0</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-01-15</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-01</td>
+          <td class="px-3 py-4 text-[#262c46]">
+            <div class="flex items-center gap-1.5">
+              <div class="w-3 h-3 bg-[#9afe6b] rounded-full"></div>
+              <p>Paid</p>
+            </div>
+          </td>
+          <td class="px-3 py-4 text-[#262c46]">200.0</td>
+          <td class="px-3 py-4 text-[#262c46]">Officer A</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">F-1002</th>
+          <td class="px-3 py-4 text-[#262c46]">Speeding</td>
+          <td class="px-3 py-4 text-[#262c46]">500.0</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-05</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-15</td>
+          <td class="px-3 py-4 text-[#262c46]">
+            <div class="flex items-center gap-1.5">
+              <div class="w-3 h-3 bg-[#fc4b4b] rounded-full"></div>
+              <p>Unpaid</p>
+            </div>
+          </td>
+          <td class="px-3 py-4 text-[#262c46]">750.0</td>
+          <td class="px-3 py-4 text-[#262c46]">Officer B</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">F-1003</th>
+          <td class="px-3 py-4 text-[#262c46]">No Helmet</td>
+          <td class="px-3 py-4 text-[#262c46]">300.0</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-10</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-25</td>
+          <td class="px-3 py-4 text-[#262c46]">
+            <div class="flex items-center gap-1.5">
+              <div class="w-3 h-3 bg-[#6e6f70] rounded-full"></div>
+              <p>Overdue</p>
+            </div>
+          </td>
+          <td class="px-3 py-4 text-[#262c46]">300.0</td>
+          <td class="px-3 py-4 text-[#262c46]">Officer C</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">F-1003</th>
+          <td class="px-3 py-4 text-[#262c46]">Red Light Violation</td>
+          <td class="px-3 py-4 text-[#262c46]">400.0</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-12</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-28</td>
+          <td class="px-3 py-4 text-[#262c46]">
+            <div class="flex items-center gap-1.5">
+              <div class="w-3 h-3 bg-[#9afe6b] rounded-full"></div>
+              <p>Paid</p>
+            </div>
+          </td>
+          <td class="px-3 py-4 text-[#262c46]">400.0</td>
+          <td class="px-3 py-4 text-[#262c46]">Officer D</td>
+        </tr>
+        <tr class="bg-whiteColor border-b border-[#d8dad3]">
+          <th class="px-3 py-4 font-normal text-[#262c46]">F-1005</th>
+          <td class="px-3 py-4 text-[#262c46]">Expired License</td>
+          <td class="px-3 py-4 text-[#262c46]">800.0</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-01-25</td>
+          <td class="px-3 py-4 text-[#262c46]">2025-02-10</td>
+          <td class="px-3 py-4 text-[#262c46]">
+            <div class="flex items-center gap-1.5">
+              <div class="w-3 h-3 bg-[#6e6f70] rounded-full"></div>
+              <p>Overdue</p>
+            </div>
+          </td>
+          <td class="px-3 py-4 text-[#262c46]">1100.0</td>
+          <td class="px-3 py-4 text-[#262c46]">Officer E</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  }
+</section>
