@@ -6,37 +6,29 @@
   <div class="mt-10">
     <nav>
       <ul>
-       @if(userDetails.role === 'officer'){
+        @if(userDetails.role === 'officer'){
         <app-navlist
-        [iconSrc]="'assets/icons/homeI.svg'"
-        [iconActSrc]="'assets/icons/home.svg'"
-        [label]="'Dashboard'"
-        [active]="mainDashboard"
-        (click)="setNavActive('mainDashboard')"
-        [page]="'main-dashboard'"
-      />
-      <app-navlist
-        [iconSrc]="'assets/icons/list-icon.svg'"
-        [iconActSrc]="'assets/icons/active-list-icon.svg'"
-        [label]="'Records'"
-        [active]="axelLoad"
-        (click)="setNavActive('axelLoad')"
-        [page]="'axle-load'"
-      />
-      <app-navlist
-        [iconSrc]="'assets/icons/setting-icon.svg'"
-        [iconActSrc]="'assets/icons/active-settings.svg'"
-        [label]="'Settings'"
-        [active]="settings"
-        (click)="setNavActive('settings')"
-        [page]="'settings'"
-      />
-       }
+          [iconSrc]="'assets/icons/homeI.svg'"
+          [iconActSrc]="'assets/icons/home.svg'"
+          [label]="'Dashboard'"
+          [active]="mainDashboard"
+          (click)="setNavActive('mainDashboard')"
+          [page]="'main-dashboard'"
+        />
+        <app-navlist
+          [iconSrc]="'assets/icons/list-icon.svg'"
+          [iconActSrc]="'assets/icons/active-list-icon.svg'"
+          [label]="'Records'"
+          [active]="axelLoad"
+          (click)="setNavActive('axelLoad')"
+          [page]="'axle-load'"
+        />
 
+        }
 
         <!-- Admin -->
         @if(userDetails.role === 'admin'){
-          <app-navlist
+        <app-navlist
           [iconSrc]="'assets/icons/stats-icon.svg'"
           [iconActSrc]="'assets/icons/stats-iconActive.svg'"
           [label]="'Dashboard'"
@@ -46,13 +38,49 @@
         />
 
         <app-navlist
-        [iconSrc]="'assets/icons/users.svg'"
-        [iconActSrc]="'assets/icons/activeUsers.svg'"
-        [label]="'Monitoring Officers'"
-        [active]="monitoringOfficers"
-        (click)="setNavActive('monitoring-officers')"
-        [page]="'monitoring-officers'"
-      />
+          [iconSrc]="'assets/icons/users.svg'"
+          [iconActSrc]="'assets/icons/activeUsers.svg'"
+          [label]="'Users'"
+          [active]="user"
+          (click)="setNavActive('user')"
+          [page]="'users'"
+        />
+
+        <app-navlist
+          [iconSrc]="'assets/icons/fines.svg'"
+          [iconActSrc]="'assets/icons/active-fines.svg'"
+          [label]="'Fine Management'"
+          [active]="fines"
+          (click)="setNavActive('fines')"
+          [page]="'fines'"
+        />
+
+        <app-navlist
+          [iconSrc]="'assets/icons/users.svg'"
+          [iconActSrc]="'assets/icons/activeUsers.svg'"
+          [label]="'Audit Trail'"
+          [active]="auditTrail"
+          (click)="setNavActive('auditTrail')"
+          [page]="'auditTrail'"
+        />
+
+        <app-navlist
+          [iconSrc]="'assets/icons/report.svg'"
+          [iconActSrc]="'assets/icons/active-report.svg'"
+          [label]="'Reports'"
+          [active]="reports"
+          (click)="setNavActive('reports')"
+          [page]="'reports'"
+        />
+
+        <app-navlist
+          [iconSrc]="'assets/icons/setting-icon.svg'"
+          [iconActSrc]="'assets/icons/active-settings.svg'"
+          [label]="'Settings'"
+          [active]="settings"
+          (click)="setNavActive('settings')"
+          [page]="'settings'"
+        />
         }
       </ul>
     </nav>
