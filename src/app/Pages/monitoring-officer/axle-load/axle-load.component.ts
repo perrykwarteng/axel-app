@@ -9,9 +9,6 @@ import { SearchInputComponent } from '../../../Shared/components/search-input/se
     selector: 'app-axle-load',
     imports: [
         ButtonIconComponent,
-        ModalComponent,
-        InputComponent,
-        SelectComponent,
         SearchInputComponent,
     ],
     templateUrl: './axle-load.component.html',
