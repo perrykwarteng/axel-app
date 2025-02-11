@@ -1,0 +1,40 @@
+<section>
+  <div class="fine-stats w-full flex gap-5 items-center flex-wrap">
+    <div class="flex-grow">
+      <app-fine-stat
+        [amount]="30000"
+        [title]="'Total Fines'"
+        [icon]="'../../../../assets/icons/money.svg'"
+        [total]="1000"
+        [bgColor]="'bg-[#d2d0f1]'"
+      />
+    </div>
+    <div class="flex-grow">
+      <app-fine-stat
+        [amount]="10000"
+        [title]="'Paid'"
+        [icon]="'../../../../assets/icons/paid.svg'"
+        [total]="400"
+        [bgColor]="'bg-[#C7FFAD]'"
+      />
+    </div>
+    <div class="flex-grow">
+      <app-fine-stat
+        [amount]="20000"
+        [title]="'Unpaid'"
+        [icon]="'../../../../assets/icons/unpaid.svg'"
+        [total]="600"
+        [bgColor]="'bg-[#EFB9B9]'"
+      />
+    </div>
+  </div>
+
+  <div class="all-fines mt-5">
+    <app-table
+      [tableHead]="userTable()"
+      [tableData]="data()"
+      [isSearch]="true"
+      [filterNames]="filterName"
+    />
+  </div>
+</section>
