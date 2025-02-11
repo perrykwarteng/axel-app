@@ -1,0 +1,20 @@
+<div class="w-full bg-whiteColor shadow-md p-3 rounded-lg">
+  <div class="flex items-center justify-between">
+    <p class="text-lightSecondaryColor font-medium">{{ title() }}</p>
+    <div
+      class="w-8 h-8 rounded-full flex items-center justify-center {{
+        bgColor()
+      }}"
+    >
+      <img class="w-5 h-5" [src]="icon()" />
+    </div>
+  </div>
+  <div>
+    <p class="text-secondaryColor font-semibold text-[35px]">
+      GHS{{ amount() }}
+    </p>
+    <div class="bg-[#ededed] p-1.5 rounded-[30px] inline-block">
+      <p class="text-lightSecondaryColor text-[11px]">Total: {{ total() }}</p>
+    </div>
+  </div>
+</div>
